@@ -161,11 +161,10 @@ class CswSpider(scrapy.Spider):
 
 
     def _accept(self, row) -> bool:
-        if row.get("backend") in ("csw-iso-19139", None):
-            return True
-        if row.get("validation") in ("accepted", None):
-            return True
-        return False
+        return (
+            row.get("backend") in ("csw-iso-19139", None)
+            and row.get("validation") in ("accepted", None)
+        )
 
 
     def _make_request(self, endpoint: Endpoint, start: int = 1) -> scrapy.Request:
