@@ -1,0 +1,8 @@
+[project]
+name = "csw-spider"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "lxml>=6.0",
+    "scrapy>=2.14",
+]
